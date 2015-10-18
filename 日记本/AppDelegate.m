@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-
+#import "CHDTabBarViewController.h"
+#import "UIImage+Extension.h"
 @interface AppDelegate ()
 
 @end
@@ -16,7 +17,19 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    //1. 创建窗口
+    _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    // 2. 设置跟控制器
+    
+    CHDTabBarViewController *tabBarController = [[CHDTabBarViewController alloc]init];
+    _window.rootViewController = tabBarController;
+
+    
     // Override point for customization after application launch.
+    // 设置tabbar的背景颜色
+    //[tabBarController.tabBar setBackgroundColor:[UIColor redColor]];
+       // [tabBarController.tabBar setBarStyle:UIBarStyleBlack];
+    [_window makeKeyAndVisible];
     return YES;
 }
 
